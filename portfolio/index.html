@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abhishek Kumar Chaurasia | Software Engineer &amp; Frontend Developer</title>
+  <meta name="description" content="Portfolio of Abhishek Kumar Chaurasia, a B.Tech Computer Science student from Lucknow working on frontend development, deep learning and computer vision.">
+  <meta name="theme-color" content="#121212">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Apply the saved theme before first paint to avoid a flash
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a href="#home" class="brand" aria-label="Go to home">Abhishek</a>
+
+      <nav id="nav" class="nav" aria-label="Main">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#certificates" class="nav-link">Certificates</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#resume" class="nav-link">Resume</a>
+        <a href="#about" class="nav-link">About me</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light theme"></button>
+        <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HOME -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="avatar-wrap">
+          <img id="avatar" class="avatar" src="images/avatar.svg" alt="Portrait of Abhishek Kumar Chaurasia" width="220" height="220">
+        </div>
+
+        <div class="hero-body">
+          <h1>Hi, I'm <span class="accent">Abhishek Kumar Chaurasia</span></h1>
+          <p class="tagline">Software Engineer | Frontend Developer | Tech Explorer</p>
+
+          <div class="chips" role="list">
+            <button class="chip" type="button" role="listitem" data-go="projects">Coder</button>
+            <button class="chip" type="button" role="listitem" data-go="resume">Software Engineer</button>
+            <button class="chip" type="button" role="listitem" data-go="skills">Deep Learning Expert</button>
+            <button class="chip" type="button" role="listitem" data-go="projects">Computer Vision Researcher</button>
+            <button class="chip" type="button" role="listitem" data-go="blog">Developer</button>
+          </div>
+
+          <div class="info-cards">
+            <a class="info-card" id="locationCard" target="_blank" rel="noopener" href="#">
+              <i class="fa-solid fa-location-dot"></i>
+              <span><strong>Location</strong><span>UP, Lucknow, India</span></span>
+            </a>
+            <button class="info-card" type="button" data-go="skills">
+              <i class="fa-solid fa-briefcase"></i>
+              <span><strong>Expertise</strong><span>Problem solving</span></span>
+            </button>
+            <a class="info-card" data-email href="#">
+              <i class="fa-solid fa-envelope"></i>
+              <span><strong>Contact</strong><span data-email-text></span></span>
+            </a>
+          </div>
+
+          <div class="hero-cta">
+            <button class="btn btn-primary" type="button" data-go="projects">View my projects</button>
+            <button class="btn btn-ghost" type="button" data-action="download-resume"><i class="fa-solid fa-download"></i> Download resume</button>
+            <button class="btn btn-ghost" type="button" data-go="contact">Hire me</button>
+          </div>
+
+          <div class="connect">
+            <h2 class="connect-title">Connect</h2>
+            <div class="social-row">
+              <a data-social="github" aria-label="GitHub" target="_blank" rel="noopener" href="#"><i class="fa-brands fa-github"></i></a>
+              <a data-social="linkedin" aria-label="LinkedIn" target="_blank" rel="noopener" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a data-email aria-label="Email" href="#"><i class="fa-solid fa-envelope"></i></a>
+              <a data-social="whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+              <a data-social="instagram" aria-label="Instagram" target="_blank" rel="noopener" href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a data-social="facebook" aria-label="Facebook" target="_blank" rel="noopener" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-lead">Things I have built while learning web development and machine learning.</p>
+        <div class="filters" id="projectFilters" role="group" aria-label="Filter projects"></div>
+        <div class="grid grid-3" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-lead">Moments from hackathons, classrooms and late-night debugging. Select a photo to enlarge it.</p>
+        <div class="gallery" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-lead">Pick a category to see what I work with and how comfortable I am with it.</p>
+        <div class="filters" id="skillTabs" role="tablist" aria-label="Skill categories"></div>
+        <div class="skill-list" id="skillList" role="tabpanel"></div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Certificates</h2>
+        <p class="section-lead">Courses and programs I have completed.</p>
+        <div class="grid grid-2" id="certGrid"></div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="section">
+      <div class="container">
+        <h2 class="section-title">Blog</h2>
+        <p class="section-lead">Short notes on what I am learning.</p>
+        <div class="grid grid-3" id="blogGrid"></div>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="section alt">
+      <div class="container">
+        <div class="resume-head">
+          <div>
+            <h2 class="section-title">Resume</h2>
+            <p class="section-lead">Education, experience and achievements at a glance.</p>
+          </div>
+          <div class="resume-actions">
+            <button class="btn btn-primary" type="button" data-action="download-resume"><i class="fa-solid fa-download"></i> Download as PDF</button>
+          </div>
+        </div>
+        <div class="resume-grid" id="resumeGrid"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div>
+          <h2 class="section-title">About me</h2>
+          <div id="aboutText" class="prose"></div>
+          <div class="hero-cta">
+            <button class="btn btn-primary" type="button" data-go="contact">Let's talk</button>
+            <button class="btn btn-ghost" type="button" data-go="projects">See my work</button>
+          </div>
+        </div>
+        <dl class="facts" id="aboutFacts"></dl>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-lead">Have an internship, project or collaboration in mind? Send a message and I will reply by email.</p>
+
+        <div class="contact-grid">
+          <div class="contact-side">
+            <div class="contact-row">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <a data-email data-email-text href="#"></a>
+              </div>
+              <button class="btn btn-small btn-ghost" type="button" id="copyEmail"><i class="fa-solid fa-copy"></i> Copy</button>
+            </div>
+            <div class="contact-row">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div>
+                <strong>WhatsApp</strong>
+                <a data-social="whatsapp" target="_blank" rel="noopener" href="#">Chat on WhatsApp</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Location</strong>
+                <a id="locationLink" target="_blank" rel="noopener" href="#">Lucknow, Uttar Pradesh, India</a>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="field">
+              <label for="cName">Your name</label>
+              <input id="cName" name="name" type="text" autocomplete="name" required>
+              <p class="error" data-error-for="cName" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="cEmail">Your email</label>
+              <input id="cEmail" name="email" type="email" autocomplete="email" required>
+              <p class="error" data-error-for="cEmail" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="cMsg">Message</label>
+              <textarea id="cMsg" name="message" rows="5" required></textarea>
+              <p class="error" data-error-for="cMsg" role="alert"></p>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Send message</button>
+              <button class="btn btn-ghost" type="reset">Clear form</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Abhishek Kumar Chaurasia. Built with HTML, CSS and JavaScript.</p>
+      <div class="social-row small" id="footerSocials"></div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Shared dialog for certificates and blog posts -->
+  <dialog id="modal" class="modal" aria-labelledby="modalTitle">
+    <div class="modal-inner">
+      <button class="icon-btn modal-close" id="modalClose" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div id="modalBody"></div>
+    </div>
+  </dialog>
+
+  <!-- Gallery lightbox -->
+  <dialog id="lightbox" class="modal lightbox" aria-label="Photo viewer">
+    <div class="modal-inner">
+      <button class="icon-btn modal-close" id="lbClose" type="button" aria-label="Close photo viewer"><i class="fa-solid fa-xmark"></i></button>
+      <figure>
+        <img id="lbImg" alt="">
+        <figcaption id="lbCaption"></figcaption>
+      </figure>
+      <div class="lb-nav">
+        <button class="icon-btn" id="lbPrev" type="button" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="icon-btn" id="lbNext" type="button" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
